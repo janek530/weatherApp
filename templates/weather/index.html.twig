@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello WeatherController!{% endblock %}
+
+{% block body %}
+<div class="weather-box">
+    <form action="show" method="get">
+        Miasto: <input type="text" name="location"><br>
+        <input type="radio" name="strategy" id="geoposition" value="geoposition">
+        <label for="geoposition">geoposition</label><br>
+        <input type="radio" name="strategy" id="postalCode" value="postalCode">
+        <label for="postalCode">postalCode</label><br>
+        <input type="radio" name="strategy" id="cityName" value="cityName">
+        <label for="cityName">cityName</label><br>
+        <input type="submit" value="Sprawdź">
+        
+    </form>
+</div>
+{% endblock %}
