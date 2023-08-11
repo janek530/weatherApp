@@ -17,14 +17,15 @@ class ShowWeatherController extends AbstractController
                 $weather = new Weather();
                 $weather->setStrategy($_GET['strategy']);
                 $weather->setLocation($_GET['location']);
-                $data = $weather->getLocationKey();
+                $data = $weather->call();
+               
             }
         }
 
 
         return $this->render('show_weather/index.html.twig', [
             'controller_name' => 'ShowWeatherController',
-            'data'=>$data,
+            'data' => $data,
         ]);
     }
 }

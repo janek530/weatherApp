@@ -4,7 +4,7 @@ namespace weatherApp\weather\strategy;
 
 use weatherApp\weather\interface\StrategyInterface;
 
-class geopositionStrategy implements StrategyInterface{
+class GeopositionStrategy implements StrategyInterface{
     private $strategyUrl;
 
 

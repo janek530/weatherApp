@@ -9,8 +9,6 @@ use weatherApp\Weather;
 
 class WeatherController extends AbstractController
 {
-    public $data;
-
     #[Route('/weather', name: 'app_weather')]
     public function index(): Response
     {

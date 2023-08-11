@@ -4,7 +4,7 @@ namespace weatherApp;
 
 use weatherApp\weather\interface\StrategyInterface;
 use weatherApp\weather\strategy\PostalCodeStrategy;
-use weatherApp\weather\strategy\geopositionStrategy;
+use weatherApp\weather\strategy\GeopositionStrategy;
 
 class Weather {
     private $url = "http://dataservice.accuweather.com/locations";
@@ -16,7 +16,6 @@ class Weather {
 
     function getLocationKey(){
         $json = $this->call();
-        var_dump($json);
     }
 
     function setStrategy($strategy) {
@@ -46,16 +45,15 @@ class Weather {
         $url = $this->url.$this->getStrategyUrl().$this->location."&apikey=".$this->apiKey;
         $curl = curl_init($url);
         $response = curl_exec($curl);
-        
+        print_r($response);
         if (curl_errno($curl)){
             echo 'CURL ERROR: '.curl_error($curl);
         }
 
         curl_close($curl);
 
-        $data = json_decode($response, true);
+        $json = json_decode($response);
 
-        return $data;
+        return $json;
     }
 }
-
