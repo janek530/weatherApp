@@ -8,7 +8,7 @@ use weatherApp\weather\strategy\GeopositionStrategy;
 
 class Weather {
     private $url = "http://dataservice.accuweather.com/locations";
-    private $apiKey = "S3fCBUtVUXseMvWJbmJ0OsKt4CYDivVl";
+    private $apiKey = "api_key";
     private $locationKey;
     private $strategy;
     private $location;
